@@ -15,12 +15,26 @@ def emotion_detector(text_to_analyze):
         "raw_document": { "text": text_to_analyze } 
     }
     response = requests.post("https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict", headers= headers, json= input )
+    
+    if response.status_code == 400:
+        output= {
+        "anger": 'None', 
+        "disgust": 'None', 
+        "fear": 'None', 
+        "joy": 'None', 
+        "sadness": 'None', 
+        "dominant_emotion":'None'
+        }
+
+        return output
+    
     output = response.json()
     filteredOutput = output['emotionPredictions'][0]['emotion']
     high_score = max(filteredOutput, key=filteredOutput.get)
 
     filteredOutput['dominant_emotion']= high_score
 
+    
 
     # print(json.dumps(filteredOutput, indent=2))
 
