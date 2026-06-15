@@ -1,8 +1,6 @@
-from flask import Flask, make_response, request
 import requests, json
 
 
-app = Flask(__name__)
 
 def emotion_detector(text_to_analyze):
 

@@ -1,1 +1,1 @@
-from . import  emotion_detector
+from .MyPackages.emotion_detection import  emotion_detector
