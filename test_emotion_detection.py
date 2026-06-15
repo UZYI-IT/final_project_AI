@@ -1,6 +1,5 @@
 import unittest
-
-from emotion_detection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 class TestDetector(unittest.TestCase): 
 

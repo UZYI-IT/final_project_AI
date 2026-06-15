@@ -4,7 +4,7 @@ It handles routes for processing text and returning emotion scores.
 """
 
 from flask import Flask, request, render_template
-from final_project import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 
 
